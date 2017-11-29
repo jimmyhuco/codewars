@@ -1,13 +1,23 @@
 module Test.Main where
 
 import Codewars.G964.Sumdigpow
-import Prelude (discard)
 
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.AVar (AVAR)
+import Control.Monad.Eff.Console (CONSOLE)
+import Data.List (List(Nil), (:))
+import Prelude (Unit, discard)
 import Test.Unit (suite, test)
 import Test.Unit.Assert as Assert
+import Test.Unit.Console (TESTOUTPUT)
 import Test.Unit.Main (runTest)
-import Data.List (List(..), (:))
 
+main ::
+  forall eff .
+  Eff ( console :: CONSOLE
+      , testOutput :: TESTOUTPUT
+      , avar :: AVAR
+      | eff) Unit
 main = runTest do
   suite "sync code" do
     test "sumDigPow" do
