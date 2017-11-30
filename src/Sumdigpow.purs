@@ -2,8 +2,7 @@ module Codewars.G964.Sumdigpow where
 
 import Data.Char.Unicode (digitToInt)
 import Data.Int (pow)
-import Data.List.Lazy (filter, iterate, zipWith, (..))
-import Data.List.Lazy.Types (List, nil)
+import Data.List.Lazy (filter, iterate, zipWith, (..), List, nil)
 import Data.Maybe (fromMaybe)
 import Data.String.Yarn (toChars)
 import Data.Traversable (sum, traverse)

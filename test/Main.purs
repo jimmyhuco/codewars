@@ -1,7 +1,7 @@
 module Test.Main where
 
 import Codewars.G964.Sumdigpow
-import Data.List.Lazy.Types (nil, (:))
+import Data.List.Lazy (nil, (:))
 
 import Control.Monad.Aff.AVar (AVAR)
 import Control.Monad.Eff (Eff)
