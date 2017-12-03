@@ -50,7 +50,7 @@ resultOne = sum $ map f $ map sort intArray
     f xs = fromMaybe 0 $ (-) <$> last(xs) <*> head(xs)
 
 resultTwo :: Int
-resultTwo = sum $ L.concat $ L.fromFoldable $ map (map calc ) filterd
+resultTwo = sum $ L.concat $ L.fromFoldable $ map (map calc) filterd
   where
     calc (x L.: y L.: L.Nil) = x / y
     calc _ = 0
@@ -59,9 +59,16 @@ resultTwo = sum $ L.concat $ L.fromFoldable $ map (map calc ) filterd
     sorted = map (map $ L.reverse <<< L.sort) pairs
     pairs = map (combination 2) intList
 
-main :: forall eff. Eff ( console :: CONSOLE | eff) Unit
+main :: forall eff. Eff (console :: CONSOLE | eff) Unit
 main = do
   log "part one:"
   logShow $ resultOne
   log "\npart two:"
   logShow $ resultTwo
+
+-- output:
+-- part one:
+-- 50376
+
+-- part two:
+-- 267
